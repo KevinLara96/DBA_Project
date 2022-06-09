@@ -1,6 +1,6 @@
 # @Autor Lara Sala Kevin Arturo y Miranda Cortes Yak Balam
 # @Fecha 02/05/2022
-# @Descripcion Script para crear dos loop device
+# @Descripcion Script para crear tres loop device
 
 # Creacion de directorio donde se encotraran los archivos
 # para crear los loop device
