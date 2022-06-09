@@ -13,5 +13,5 @@ startup open
 @?/rdbms/admin/catproc.sql
 @?/rdbms/admin/utlrp.sql
 
-connect system/system3 as sysdba
+connect system/system3
 @?/sqlplus/admin/pupbld.sql
