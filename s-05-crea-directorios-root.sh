@@ -86,6 +86,10 @@ chown -R oracle:oinstall app
 chmod -R 750 app
 
 # Crecion de directorios para archivos de control multiplexados y grupos Redo Logs
+mkdir d11
+mkdir d12
+mkdir d13
+
 cd /unam-bda/d11
 mkdir -p app/oracle/oradata/LAMIPROY
 chown -R oracle:oinstall app
