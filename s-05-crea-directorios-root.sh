@@ -81,6 +81,13 @@ chmod -R 750 app
 cd /unam-bda
 mkdir -p d24/app/oracle/oradata/LAMIPROY
 cd /unam-bda/d24
+# ts_temp
+chown -R oracle:oinstall app
+chmod -R 750 app
+
+cd /unam-bda
+mkdir -p d25/app/oracle/oradata/LAMIPROY
+cd /unam-bda/d25
 # ts_fra
 chown -R oracle:oinstall app
 chmod -R 750 app
@@ -102,7 +109,9 @@ chown -R oracle:oinstall app
 chmod -R 750 app
 
 echo "Mostrando directorio de data files"
-ls -l /u01/app/oracle/oradata
+ls -l /unam-bda/
 echo "Mostrando directorios para control files y Redo Logs"
-ls -l /unam-bda/d0*/app/oracle/oradata
+ls -l /unam-bda/d11/app/oracle/oradata
+ls -l /unam-bda/d12/app/oracle/oradata
+ls -l /unam-bda/d13/app/oracle/oradata
 
