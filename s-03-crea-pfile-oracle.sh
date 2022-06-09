@@ -12,6 +12,7 @@ fi;
 
 echo \
 "db_name=lamiproy
+db_domain=fi.unam
 memory_target=768M
 control_files=(/unam-bda/d11/app/oracle/oradata/${ORACLE_SID^^}/control01.ctl,
                 /unam-bda/d12/app/oracle/oradata/${ORACLE_SID^^}/control02.ctl,
