@@ -5,9 +5,9 @@
 export ORACLE_SID=lamiproy
 
 # Creacion del archivo de passwords
-orapwd FILE='$ORACLE_HOME/dbs/orapwlamiproy' format=12.2 \
-FORCE=y \
-SYS=password
+orapwd FILE='$ORACLE_HOME/dbs/orapwlamiproy' FORCE=Y FORMAT=12.2 \
+	SYS=password	\
+	SYSBACKUP=password
 
 ls -l $ORACLE_HOME/dbs/orapwlamiproy
 

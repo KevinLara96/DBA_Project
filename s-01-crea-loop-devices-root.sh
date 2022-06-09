@@ -6,7 +6,7 @@
 # para crear los loop device
 cd /unam-bda
 mkdir pf-disk-images
-cd disk-images
+cd pf-disk-images
 
 # Creacion de archivos con puros ceros
 dd if=/dev/zero of=disk1.img bs=100M count=10
@@ -35,4 +35,12 @@ mkdir /unam-bda/d11
 mkdir /unam-bda/d12
 mkdir /unam-bda/d13
 
+##Loop devices para BDA.
+#echo "Modificando el archivo fstab. Contraseña sudo para montar los discos:"
+#echo "/unam-bda/pf-disk-images/disk1.img         /unam-bda/d01   auto    loop 0 0" >> /etc/fstab
+#echo "/unam-bda/pf-disk-images/disk2.img         /unam-bda/d02   auto    loop 0 0" >> /etc/fstab
+#echo "/unam-bda/pf-disk-images/disk3.img         /unam-bda/d03   auto    loop 0 0" >> /etc/fstab
+
+#mount -a
+#df -h | grep "/*unam-bda/*"
 
