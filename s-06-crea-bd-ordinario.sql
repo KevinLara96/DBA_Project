@@ -36,7 +36,7 @@ create database lamiproy
 	--Datafiles.
 	extent management local
 	--System.
-	datafile '/unam-bda/d14/app/oracle/oradata/LAMIPROY/system01.dbf' --¿?
+	datafile '/unam-bda/..../app/oracle/oradata/LAMIPROY/system01.dbf' --¿?
 		size 700m reuse autoextend on next 10240k maxsize unlimited
 	--Proveedor.
 	datafile '/unam-bda/d14/app/oracle/oradata/LAMIPROY/ts_proveedor1.dbf'
@@ -64,11 +64,11 @@ create database lamiproy
 	datafile '/unam-bda/d22/app/oracle/oradata/LAMIPROY/ts_cli_indices.dbf'
 		size 700m reuse autoextend on next 10240k maxsize unlimited
 	--Sysaux.
-	sysaux datafile '/unam-bda/d22/app/oracle/oradata/LAMIPROY/sysaux01.dbf' --¿?
+	sysaux datafile '/unam-bda/..../app/oracle/oradata/LAMIPROY/sysaux01.dbf' --¿?
 		size 550m reuse autoextend on next 10240k maxsize unlimited
 	--Users.
 	default tablespace users
-		datafile '/unam-bda/d22/app/oracle/oradata/LAMIPROY/users01.dbf' --¿?
+		datafile '/unam-bda/..../app/oracle/oradata/LAMIPROY/users01.dbf' --¿?
 		size 500m reuse autoextend on maxsize unlimited
 	--Temporal.
 	default temporary tablespace tempts1
