@@ -7,7 +7,14 @@
 
 export ORACLE_SID=lamiproy
 
-# Creacion de dir para Data Files
+#Directorio para tablespaces de sistema.
+cd /u01/app/oracle/oradata
+mkdir ${ORACLE_SID^^}
+chown oracle:oinstall ${ORACLE_SID^^}
+chmod 750 ${ORACLE_SID^^}
+
+
+# Creacion de dir para Data Files de la Base.
 cd /unam-bda
 mkdir -p d14/app/oracle/oradata/LAMIPROY
 # ts_provedor (disco 1)
