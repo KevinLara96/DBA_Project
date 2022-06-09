@@ -16,7 +16,7 @@ echo \
 "db_name='${ORACLE_SID}'
 db_domain=fi.unam
 memory_target=768M
-control_files=(/unam-bda/d11/app/oracle/oradata/${ORACLE_SID^^}/control01.ctl,
+control_files=(	/unam-bda/d11/app/oracle/oradata/${ORACLE_SID^^}/control01.ctl,
                 /unam-bda/d12/app/oracle/oradata/${ORACLE_SID^^}/control02.ctl,
                 /unam-bda/d13/app/oracle/oradata/${ORACLE_SID^^}/control03.ctl)
 " > ${pfile}

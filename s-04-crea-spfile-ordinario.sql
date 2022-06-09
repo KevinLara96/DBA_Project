@@ -15,4 +15,4 @@ create spfile from pfile;
 -- Verificacion del que el archivo fue creado
 -- '!' Permite ejecutar una instruccion de shell (consola)
 !ls ${ORACLE_HOME}/dbs/spfilelamiproy.ora
-Prompt Archivo creado.
+Prompt Archivo de parametros creado.
