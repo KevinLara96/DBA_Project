@@ -11,9 +11,9 @@ startup nomount
 whenever sqlerror exit rollback;
 
 create database lamiproy
-	user sys identified by system2
-	user system identified by system2
-	user sysbackup identified by system2
+	user sys identified by system3
+	user system identified by system3
+	user sysbackup identified by system3
 	--Redo Logs.
 	logfile group 1 (
 		'/unam-bda/d11/app/oracle/oradata/LAMIPROY/redo01a.log',
@@ -33,52 +33,26 @@ create database lamiproy
 	maxdatafiles 1024
 	character set AL32UTF8
 	national character set AL16UTF16
-	--Datafiles.
 	extent management local
 	--System.
-	datafile '/unam-bda/..../app/oracle/oradata/LAMIPROY/system01.dbf' --¿?
-		size 700m reuse autoextend on next 10240k maxsize unlimited
-	--Proveedor.
-	datafile '/unam-bda/d14/app/oracle/oradata/LAMIPROY/ts_proveedor1.dbf'
-		size 700m reuse autoextend on next 10240k maxsize unlimited
-	datafile '/unam-bda/d15/app/oracle/oradata/LAMIPROY/ts_proveedor2.dbf'
-		size 700m reuse autoextend on next 10240k maxsize unlimited
-	--Documentos proveedor.
-	datafile '/unam-bda/d16/app/oracle/oradata/LAMIPROY/ts_prov_docs-fotos.dbf'
-		size 700m reuse autoextend on next 10240k maxsize unlimited
-	--Índices proveedor.
-	datafile '/unam-bda/d17/app/oracle/oradata/LAMIPROY/ts_prov_indices.dbf'
-		size 700m reuse autoextend on next 10240k maxsize unlimited
-	--Fotos servicio.
-	datafile '/unam-bda/d18/app/oracle/oradata/LAMIPROY/ts_prov_foto-servicio.dbf'
-		size 700m reuse autoextend on next 10240k maxsize unlimited
-	--Cliente.
-	datafile '/unam-bda/d19/app/oracle/oradata/LAMIPROY/ts_cliente1.dbf'
-		size 700m reuse autoextend on next 10240k maxsize unlimited
-	datafile '/unam-bda/d20/app/oracle/oradata/LAMIPROY/ts_cliente2.dbf'
-		size 700m reuse autoextend on next 10240k maxsize unlimited
-	--Documentos cliente.
-	datafile '/unam-bda/d21/app/oracle/oradata/LAMIPROY/ts_cli_docs-fotos.dbf'
-		size 700m reuse autoextend on next 10240k maxsize unlimited
-	--Índices cliente.
-	datafile '/unam-bda/d22/app/oracle/oradata/LAMIPROY/ts_cli_indices.dbf'
+	datafile '/u01/app/oracle/oradata/LAMIPROY/system01.dbf'
 		size 700m reuse autoextend on next 10240k maxsize unlimited
 	--Sysaux.
-	sysaux datafile '/unam-bda/..../app/oracle/oradata/LAMIPROY/sysaux01.dbf' --¿?
+	sysaux datafile '/u01/app/oracle/oradata/LAMIPROY/sysaux01.dbf'
 		size 550m reuse autoextend on next 10240k maxsize unlimited
 	--Users.
 	default tablespace users
-		datafile '/unam-bda/..../app/oracle/oradata/LAMIPROY/users01.dbf' --¿?
+		datafile '/u01/app/oracle/oradata/LAMIPROY/users01.dbf'
 		size 500m reuse autoextend on maxsize unlimited
 	--Temporal.
 	default temporary tablespace tempts1
-		tempfile '/unam-bda/d24/app/oracle/oradata/LAMIPROY/temp01.dbf'
+		tempfile '/u01/app/oracle/oradata/LAMIPROY/temp01.dbf'
 		size 20m reuse autoextend on next 640k maxsize unlimited
 	--Undo.
 	undo tablespace undotbs1
-		datafile '/unam-bda/d23/app/oracle/oradata/LAMIPROY/undotbs01.dbf'
+		datafile '/u01/app/oracle/oradata/LAMIPROY/undotbs01.dbf'
 		size 200m reuse autoextend on next 5120k maxsize unlimited;
 
-alter user sys identified by system2;
-alter user system identified by system2;
-alter user sysbackup identified by system2;
+alter user sys identified by system3;
+alter user system identified by system3;
+alter user sysbackup identified by system3;
