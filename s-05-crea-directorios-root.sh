@@ -78,23 +78,10 @@ cd /unam-bda/d22
 chown -R oracle:oinstall app
 chmod -R 750 app
 
+# Directorio para la FRA
 cd /unam-bda
-mkdir -p d23/app/oracle/oradata/LAMIPROY
+mkdir -p d23/fra
 cd /unam-bda/d23
-# ts_undo
-chown -R oracle:oinstall app
-chmod -R 750 app
-
-cd /unam-bda
-mkdir -p d24/app/oracle/oradata/LAMIPROY
-cd /unam-bda/d24
-# ts_temp
-chown -R oracle:oinstall app
-chmod -R 750 app
-
-cd /unam-bda
-mkdir -p d25/app/oracle/oradata/LAMIPROY
-cd /unam-bda/d25
 # ts_fra
 chown -R oracle:oinstall app
 chmod -R 750 app
