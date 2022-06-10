@@ -4,7 +4,7 @@
 -- 									proyecto final del curso.
 
 
-connect sys/Hola1234* as sysdba
+connect sys/hola1234* as sysdba
 startup nomount
 
 
