@@ -13,7 +13,6 @@ whenever sqlerror exit rollback;
 create database lamiproy
 	user sys identified by system3
 	user system identified by system3
-	user sysbackup identified by system3
 	--Redo Logs.
 	logfile group 1 (
 		'/unam-bda/d11/app/oracle/oradata/LAMIPROY/redo01a.log',
