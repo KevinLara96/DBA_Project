@@ -68,9 +68,3 @@ datafile '/unam-bda/d22/app/oracle/oradata/LAMIPROY/ts_c_indices.dbf'
   extent management local autoallocate
   segment space management auto
   online;
-
---Users. (Usar si se necesita).
---  default tablespace users
---    datafile '/u01/app/oracle/oradata/LAMIPROY/users01.dbf'
---    size 500m reuse autoextend on maxsize unlimited
-
