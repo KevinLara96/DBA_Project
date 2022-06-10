@@ -9,7 +9,7 @@ orapwd FILE='$ORACLE_HOME/dbs/orapwlamiproy' FORCE=Y FORMAT=12.2 \
 	SYS=password	\
 	SYSBACKUP=password
 
-ls -l $ORACLE_HOME/dbs/orapwlamiproy
+ls -l $ORACLE_HOME/dbs/
 
 
 
