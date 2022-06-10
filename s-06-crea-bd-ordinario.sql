@@ -19,13 +19,13 @@ create database lamiproy
 		'/unam-bda/d12/app/oracle/oradata/LAMIPROY/redo01b.log',
 		'/unam-bda/d13/app/oracle/oradata/LAMIPROY/redo01c.log') size 50m blocksize 512,
 	group 2 (
-		'/unam-bda/d11/app/oracle/oradata/LAMIPROY/redo01a.log',
-		'/unam-bda/d12/app/oracle/oradata/LAMIPROY/redo01b.log',
-		'/unam-bda/d13/app/oracle/oradata/LAMIPROY/redo01c.log') size 50m blocksize 512,
+		'/unam-bda/d11/app/oracle/oradata/LAMIPROY/redo02a.log',
+		'/unam-bda/d12/app/oracle/oradata/LAMIPROY/redo02b.log',
+		'/unam-bda/d13/app/oracle/oradata/LAMIPROY/redo02c.log') size 50m blocksize 512,
 	group 3 (
-		'/unam-bda/d11/app/oracle/oradata/LAMIPROY/redo01a.log',
-		'/unam-bda/d12/app/oracle/oradata/LAMIPROY/redo01b.log',
-		'/unam-bda/d13/app/oracle/oradata/LAMIPROY/redo01c.log') size 50m blocksize 512
+		'/unam-bda/d11/app/oracle/oradata/LAMIPROY/redo03a.log',
+		'/unam-bda/d12/app/oracle/oradata/LAMIPROY/redo03b.log',
+		'/unam-bda/d13/app/oracle/oradata/LAMIPROY/redo03c.log') size 50m blocksize 512
 	maxloghistory 1
 	maxlogfiles 6
 	maxlogmembers 3
