@@ -40,9 +40,10 @@ create database lamiproy
 	--Sysaux.
 	sysaux datafile '/u01/app/oracle/oradata/LAMIPROY/sysaux01.dbf'
 		size 550m reuse autoextend on next 10240k maxsize unlimited
---	default tablespace users
---		datafile '/u01/app/oracle/oradata/LAMIPROY/users01.dbf'
---		size 500m reuse autoextend on maxsize unlimited
+	--Users
+	default tablespace users
+		datafile '/u01/app/oracle/oradata/LAMIPROY/users01.dbf'
+		size 500m reuse autoextend on maxsize unlimited
 	--Temporal.
 	default temporary tablespace tempts1
 		tempfile '/u01/app/oracle/oradata/LAMIPROY/temp01.dbf'
