@@ -8,7 +8,7 @@ whenever sqlerror exit rollback;
 -- Conectando como usuario sys
 connect sys/system3 as sysdba
 
-startup open
+--startup open
 @?/rdbms/admin/catalog.sql
 @?/rdbms/admin/catproc.sql
 @?/rdbms/admin/utlrp.sql
