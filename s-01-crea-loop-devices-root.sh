@@ -35,8 +35,5 @@ mkdir /unam-bda/d11
 mkdir /unam-bda/d12
 mkdir /unam-bda/d13
 
-mount -a
-df -h | grep "/*unam-bda/d11"
-df -h | grep "/*unam-bda/d12"
-df -h | grep "/*unam-bda/d13"
+
 
