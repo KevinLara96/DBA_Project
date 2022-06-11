@@ -2,9 +2,9 @@
 --@Fecha creación: 08/05/2022
 --@Descripción: Script para la insercion de datos del modulo Provedor
 
+whenever sqlerror exit rollback;
 connect provedor/provedor
 
-alter session set nls_date_format = 'dd/mm/yyyy hh24:mi:ss';
 
 -- Insercion en NIVEL_ESTUDIO
 insert into NIVEL_ESTUDIO (NIVEL_ESTUDIO_ID, NOMBRE_NIVEL) values (1,'primaria');
@@ -38,13 +38,3 @@ insert into STATUS_PROVEDOR (STATUS_PROVEDOR_ID,NOMBRE_STATUS) values (3,'suspen
 insert into STATUS_PROVEDOR (STATUS_PROVEDOR_ID,NOMBRE_STATUS) values (4,'expulsado');
 insert into STATUS_PROVEDOR (STATUS_PROVEDOR_ID,NOMBRE_STATUS) values (5,'inactivo');
 
--- Insercion en 
-insert into 
-
--- Insercion en 
-insert into 
-
--- Insercion en 
-
-
--- Insercion en 
