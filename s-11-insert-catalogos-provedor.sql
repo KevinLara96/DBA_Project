@@ -32,7 +32,7 @@ insert into TIPO_SERVICIO (TIPO_SERVICIO_ID,NOMBRE,DESCRIPCION) values (4,'elect
 insert into TIPO_SERVICIO (TIPO_SERVICIO_ID,NOMBRE,DESCRIPCION) values (5,'mecanico','Reparacion de electrodomesticos.');
 
 -- Insercion en STATUS_PROVEDOR 
-insert into STATUS_PROVEDOR (STATUS_PROVEDOR_ID,NOMBRE_STATUS) values (1,'validacion');
+insert into STATUS_PROVEDOR (STATUS_PROVEDOR_ID,NOMBRE_STATUS) values (1,'en validacion');
 insert into STATUS_PROVEDOR (STATUS_PROVEDOR_ID,NOMBRE_STATUS) values (2,'en servicio');
 insert into STATUS_PROVEDOR (STATUS_PROVEDOR_ID,NOMBRE_STATUS) values (3,'suspendido');
 insert into STATUS_PROVEDOR (STATUS_PROVEDOR_ID,NOMBRE_STATUS) values (4,'expulsado');
