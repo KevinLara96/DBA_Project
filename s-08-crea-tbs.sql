@@ -48,7 +48,7 @@ create tablespace ts_cliente
 datafile '/unam-bda/d19/app/oracle/oradata/LAMIPROY/ts_cliente1.dbf'
   size 250m reuse autoextend on next 50m maxsize 500m,
   '/unam-bda/d20/app/oracle/oradata/LAMIPROY/ts_cliente2.dbf'
-  size 250m reuse autoextend on next 50m maxsize 500m;
+  size 250m reuse autoextend on next 50m maxsize 500m
 extent management local autoallocate
 segment space management auto
 online;
@@ -56,15 +56,15 @@ online;
 --Documentos cliente.
 create tablespace ts_c_docs_fotos
 datafile '/unam-bda/d21/app/oracle/oradata/LAMIPROY/ts_c_docs_fotos.dbf'
-  size 700m reuse autoextend on next 100m maxsize 2g,
-  extent management local autoallocate
-  segment space management auto
-  online;
+  size 700m reuse autoextend on next 100m maxsize 2g
+extent management local autoallocate
+segment space management auto
+online;
 
 --Índices cliente.
 create tablespace ts_c_indices
 datafile '/unam-bda/d22/app/oracle/oradata/LAMIPROY/ts_c_indices.dbf'
   size 20m reuse autoextend on next 10m maxsize 200m
-  extent management local autoallocate
-  segment space management auto
-  online;
+extent management local autoallocate
+segment space management auto
+online;
