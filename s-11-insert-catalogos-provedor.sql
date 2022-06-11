@@ -15,8 +15,8 @@ insert into NIVEL_ESTUDIO (NIVEL_ESTUDIO_ID, NOMBRE_NIVEL) values (5,'maestria')
 insert into NIVEL_ESTUDIO (NIVEL_ESTUDIO_ID, NOMBRE_NIVEL) values (6,'doctorado');
 
 -- Insercion en TELEFONO_TIPO
-insert into TELEFONO_TIPO (TELEFONO_TIPO_ID,TELEFONO_TIPO) values (1,'fijo');
-insert into TELEFONO_TIPO (TELEFONO_TIPO_ID,TELEFONO_TIPO) values (2,'celular');
+insert into TELEFONO_TIPO (TELEFONO_TIPO_ID,NOMBRE_TIPO) values (1,'fijo');
+insert into TELEFONO_TIPO (TELEFONO_TIPO_ID,NOMBRE_TIPO) values (2,'celular');
 
 -- Insercion en BANCO
 insert into BANCO (BANCO_ID, NOMBRE) values (1,'BBVA');
