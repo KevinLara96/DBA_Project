@@ -25,7 +25,7 @@ insert into BANCO (BANCO_ID, NOMBRE) values (3,'Bancomer');
 insert into BANCO (BANCO_ID, NOMBRE) values (4,'HSBC');
 
 -- Insercion en TIPO_SERVICIO
-insert into TIPO_SERVICIO (TIPO_SERVICIO_ID,NOMBRE,DESCRIPCION) values (1,'plomero','Instalación y reparación de tuberías utilizadas para la distribución y desecho de aire, gas y agua.');
+insert into TIPO_SERVICIO (TIPO_SERVICIO_ID,NOMBRE,DESCRIPCION) values (1,'plomero','Instalacion y reparacion de tuberias utilizadas para la distribucion y desecho de aire, gas y agua.');
 insert into TIPO_SERVICIO (TIPO_SERVICIO_ID,NOMBRE,DESCRIPCION) values (2,'carpintero','Trabajo con la madera para crear muebles del hogar como mesas, puertas, herramientas, etc.');
 insert into TIPO_SERVICIO (TIPO_SERVICIO_ID,NOMBRE,DESCRIPCION) values (3,'pintor','Trabajos de pintura de casas, edificios y fachadas.');
 insert into TIPO_SERVICIO (TIPO_SERVICIO_ID,NOMBRE,DESCRIPCION) values (4,'electricista','Colocación y reparación de instalaciones eléctricas.');
