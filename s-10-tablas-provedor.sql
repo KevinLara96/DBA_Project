@@ -2,6 +2,9 @@
 --@Fecha creación: 06/05/2022
 --@Descripción: Script para crear todas las tablas necesarias
 
+whenever sqlerror exit rollback;
+connect provedor/provedor
+
 CREATE TABLE BANCO(
     BANCO_ID    NUMBER(1, 0)    NOT NULL,
     NOMBRE      VARCHAR2(10)    NOT NULL,
