@@ -135,7 +135,7 @@ create sequence seq_seguridad
 ;
 
 -- Trigger para guardar los archivos/datos de seguridad de un provedor 	
--- Tabla: PROVEDOR_SERVICIO
+-- Tabla: SEGURIDAD
 
 create or replace trigger tr_seguridad
 	after insert 
