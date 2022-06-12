@@ -11,7 +11,7 @@ create sequence seq_historico_provedor_status
     increment by 1
     nomaxvalue
     nominvalue
-    noorder
+    order
 ;
 
 -- Trigger para el almacenamiento del historico del status del provedor
@@ -56,7 +56,7 @@ create sequence seq_provedor_servicio
     increment by 1
     nomaxvalue
     nominvalue
-    noorder
+    order
 ;
 
 -- Trigger para guardar los servicios que ofrece un provedor
@@ -99,7 +99,7 @@ create sequence seq_prov_servicio_comprobante
     increment by 1
     nomaxvalue
     nominvalue
-    noorder
+    order
 ;
 
 -- Trigger para insertar datos de comprobante por servicio realizado
