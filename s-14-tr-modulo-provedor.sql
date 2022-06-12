@@ -111,14 +111,16 @@ create or replace trigger tr_prov_servicio_comprobante
 	for each row
 declare
 v_seq_prov_servicio_comprobante_id prov_servicio_comprobante.prov_servicio_comprobante_id%TYPE;
+v_comprobante prov_servicio_comprobante.comprobante%TYPE;
 v_provedor_servicio_id prov_servicio_comprobante.provedor_servicio_id%TYPE;
 
 begin
 	select seq_prov_servicio_comprobante.nextval into v_seq_prov_servicio_comprobante_id from dual;
+	v_comprobante := '/unam-bda/pf-docs-fotos/comprobante.png';
 	v_provedor_servicio_id := :new.provedor_servicio_id;
 
-	insert into prov_servicio_comprobante (prov_servicio_comprobante_id,provedor_servicio_id) 
-	values (v_seq_prov_servicio_comprobante_id, v_provedor_servicio_id);
+	insert into prov_servicio_comprobante (prov_servicio_comprobante_id,comprobante,provedor_servicio_id) 
+	values (v_seq_prov_servicio_comprobante_id, leer_blobs(v_comprobante), v_provedor_servicio_id);
 
 end;
 / 
