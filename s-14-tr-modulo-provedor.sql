@@ -123,3 +123,112 @@ begin
 end;
 / 
 show errors 
+
+
+-- Secuencia para la llave primaria de la tabla seguridad
+create sequence seq_seguridad
+    start with 1
+    increment by 1
+    nomaxvalue
+    nominvalue
+    order
+;
+
+-- Trigger para guardar los archivos/datos de seguridad de un provedor 	
+-- Tabla: PROVEDOR_SERVICIO
+
+create or replace trigger tr_seguridad
+	after insert 
+	on provedor
+	for each row
+declare
+v_seq_seguridad seguridad.seguridad_id%TYPE;
+v_clabe seguridad.clabe%TYPE;
+v_provedor_id seguridad.provedor_id%TYPE;
+begin
+	select seq_seguridad.nextval into v_seq_seguridad from dual;
+	select dbms_random.string('X', 18) into v_clabe from dual;
+	v_provedor_id:= :new.provedor_id;
+		
+	insert into seguridad (seguridad_id,clabe,provedor_id)
+	values (v_seq_seguridad,v_clabe,v_provedor_id);
+end;
+/ 
+show errors 
+
+
+-- Secuencia para la llave primaria de la tabla servicio_provedor_realizado
+create sequence seq_servicio_provedor_realizado
+    start with 1
+    increment by 1
+    nomaxvalue
+    nominvalue
+    order
+;
+
+-- Trigger para insertar datos de los servicios hechos con anterioridad
+-- TABLA: SERVICIO_PROVEDOR_REALIZADO
+
+create or replace trigger tr_servicio_provedor_realizado
+	after insert 
+	on provedor_servicio
+	for each row
+declare
+v_seq_servicio_provedor_realizado servicio_provedor_realizado.servicio_provedor_realizado_id%TYPE;
+v_descripcion servicio_provedor_realizado.descripcion%TYPE;
+v_fecha_servicio servicio_provedor_realizado.fecha_servicio%TYPE;
+v_provedor_id servicio_provedor_realizado.provedor_id%TYPE;
+
+begin
+	select seq_servicio_provedor_realizado.nextval into v_seq_servicio_provedor_realizado from dual;
+	select dbms_random.string('L', 200) into v_descripcion from dual;
+	select sysdate-round(dbms_random.value(0,30*12*5),0) into v_fecha_servicio from dual;
+	v_provedor_id := :new.provedor_id;
+
+	insert into servicio_provedor_realizado (servicio_provedor_realizado_id,descripcion,fecha_servicio,provedor_id) 
+	values (v_seq_servicio_provedor_realizado,v_descripcion,v_fecha_servicio,v_provedor_id);
+
+end;
+/ 
+show errors 
+
+
+-- Secuencia para la llave primaria de la tabla servicio_realizado_imagen
+create sequence seq_servicio_realizado_imagen
+    start with 1
+    increment by 1
+    nomaxvalue
+    nominvalue
+    order
+;
+
+-- Trigger para insertar evidencias de los servicios hechos con anterioridad
+-- TABLA: SERVICIO_REALIZADO_IMAGEN
+
+create or replace trigger tr_servicio_realizado_imagen
+	after insert 
+	on servicio_provedor_realizado
+	for each row
+declare
+v_seq_servicio_realizado_imagen servicio_realizado_imagen.servicio_realizado_imagen_id%TYPE;
+v_descripcion_imagen servicio_realizado_imagen.descripcion_imagen%TYPE;
+v_servicio_provedor_realizado_id servicio_realizado_imagen.servicio_provedor_realizado_id%TYPE;
+
+
+begin
+	select seq_servicio_realizado_imagen.nextval into v_seq_servicio_realizado_imagen from dual;
+	select dbms_random.string('L', 500) into v_descripcion_imagen from dual;
+	v_servicio_provedor_realizado_id := :new.servicio_provedor_realizado_id;
+
+	insert into servicio_realizado_imagen (servicio_realizado_imagen_id,descripcion_imagen,servicio_provedor_realizado_id) 
+	values (v_seq_servicio_realizado_imagen,v_descripcion_imagen,v_servicio_provedor_realizado_id);
+
+	select seq_servicio_realizado_imagen.nextval into v_seq_servicio_realizado_imagen from dual;
+	select dbms_random.string('L', 500) into v_descripcion_imagen from dual;
+
+	insert into servicio_realizado_imagen (servicio_realizado_imagen_id,descripcion_imagen,servicio_provedor_realizado_id) 
+	values (v_seq_servicio_realizado_imagen,v_descripcion_imagen,v_servicio_provedor_realizado_id);
+
+end;
+/ 
+show errors 
