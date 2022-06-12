@@ -116,11 +116,11 @@ v_provedor_servicio_id prov_servicio_comprobante.provedor_servicio_id%TYPE;
 
 begin
 	select seq_prov_servicio_comprobante.nextval into v_seq_prov_servicio_comprobante_id from dual;
-	v_comprobante := '/unam-bda/pf-docs-fotos/comprobante.png';
+	v_comprobante := leer_blobs('/unam-bda/pf-docs-fotos/comprobante.png');
 	v_provedor_servicio_id := :new.provedor_servicio_id;
 
 	insert into prov_servicio_comprobante (prov_servicio_comprobante_id,comprobante,provedor_servicio_id) 
-	values (v_seq_prov_servicio_comprobante_id, leer_blobs(v_comprobante), v_provedor_servicio_id);
+	values (v_seq_prov_servicio_comprobante_id, v_comprobante, v_provedor_servicio_id);
 
 end;
 / 
@@ -145,15 +145,19 @@ create or replace trigger tr_seguridad
 	for each row
 declare
 v_seq_seguridad seguridad.seguridad_id%TYPE;
+v_identificacion_pdf seguridad.identificacion_pdf%TYPE;
+v_comprobante_domicilio seguridad.comprobante_domicilio%TYPE;
 v_clabe seguridad.clabe%TYPE;
 v_provedor_id seguridad.provedor_id%TYPE;
 begin
 	select seq_seguridad.nextval into v_seq_seguridad from dual;
+	v_identificacion_pdf := leer_blobs('/unam-bda/pf-docs-fotos/identificacion.jpg');
+	v_comprobante_domicilio := leer_blobs('/unam-bda/pf-docs-fotos/domicilio.png');
 	select dbms_random.string('X', 18) into v_clabe from dual;
 	v_provedor_id:= :new.provedor_id;
 		
-	insert into seguridad (seguridad_id,clabe,provedor_id)
-	values (v_seq_seguridad,v_clabe,v_provedor_id);
+	insert into seguridad (seguridad_id,identificacion_pdf,comprobante_domicilio,clabe,provedor_id)
+	values (v_seq_seguridad,v_identificacion_pdf,v_comprobante_domicilio,v_clabe,v_provedor_id);
 end;
 / 
 show errors 
@@ -213,23 +217,25 @@ create or replace trigger tr_servicio_realizado_imagen
 	for each row
 declare
 v_seq_servicio_realizado_imagen servicio_realizado_imagen.servicio_realizado_imagen_id%TYPE;
+v_servicio_imagen servicio_realizado_imagen.servicio_imagen%TYPE;
 v_descripcion_imagen servicio_realizado_imagen.descripcion_imagen%TYPE;
 v_servicio_provedor_realizado_id servicio_realizado_imagen.servicio_provedor_realizado_id%TYPE;
 
 
 begin
 	select seq_servicio_realizado_imagen.nextval into v_seq_servicio_realizado_imagen from dual;
+	v_servicio_imagen := leer_blobs('/unam-bda/pf-docs-fotos/servicio_prov.png');
 	select dbms_random.string('L', 500) into v_descripcion_imagen from dual;
 	v_servicio_provedor_realizado_id := :new.servicio_provedor_realizado_id;
 
-	insert into servicio_realizado_imagen (servicio_realizado_imagen_id,descripcion_imagen,servicio_provedor_realizado_id) 
-	values (v_seq_servicio_realizado_imagen,v_descripcion_imagen,v_servicio_provedor_realizado_id);
+	insert into servicio_realizado_imagen (servicio_realizado_imagen_id,servicio_imagen,descripcion_imagen,servicio_provedor_realizado_id) 
+	values (v_seq_servicio_realizado_imagen,v_servicio_imagen,v_descripcion_imagen,v_servicio_provedor_realizado_id);
 
 	select seq_servicio_realizado_imagen.nextval into v_seq_servicio_realizado_imagen from dual;
 	select dbms_random.string('L', 500) into v_descripcion_imagen from dual;
 
-	insert into servicio_realizado_imagen (servicio_realizado_imagen_id,descripcion_imagen,servicio_provedor_realizado_id) 
-	values (v_seq_servicio_realizado_imagen,v_descripcion_imagen,v_servicio_provedor_realizado_id);
+	insert into servicio_realizado_imagen (servicio_realizado_imagen_id,servicio_imagen,descripcion_imagen,servicio_provedor_realizado_id) 
+	values (v_seq_servicio_realizado_imagen,v_servicio_imagen,v_descripcion_imagen,v_servicio_provedor_realizado_id);
 
 end;
 / 
