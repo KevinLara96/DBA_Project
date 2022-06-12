@@ -309,3 +309,6 @@ CREATE TABLE SERVICIO_REALIZADO_IMAGEN(
         TABLESPACE ts_p_foto_servicio INDEX SERVICIO_REALIZADO_IMAGEN_FOTO_IX (TABLESPACE ts_p_indices)
     )
 ;
+
+grant references on provedor to cliente;
+grant references on tipo_servicio to cliente;
