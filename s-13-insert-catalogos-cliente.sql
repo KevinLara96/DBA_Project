@@ -13,3 +13,5 @@ insert into STATUS_SERVICIO (STATUS_SERVICIO_ID,NOMBRE_STATUS) values (2,'acepta
 insert into STATUS_SERVICIO (STATUS_SERVICIO_ID,NOMBRE_STATUS) values (3,'en ejecucion');
 insert into STATUS_SERVICIO (STATUS_SERVICIO_ID,NOMBRE_STATUS) values (4,'por pagar');
 insert into STATUS_SERVICIO (STATUS_SERVICIO_ID,NOMBRE_STATUS) values (5,'pagado');
+
+commit;

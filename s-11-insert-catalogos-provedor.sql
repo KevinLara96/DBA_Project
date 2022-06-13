@@ -38,3 +38,4 @@ insert into STATUS_PROVEDOR (STATUS_PROVEDOR_ID,NOMBRE_STATUS) values (3,'suspen
 insert into STATUS_PROVEDOR (STATUS_PROVEDOR_ID,NOMBRE_STATUS) values (4,'expulsado');
 insert into STATUS_PROVEDOR (STATUS_PROVEDOR_ID,NOMBRE_STATUS) values (5,'inactivo');
 
+commit;
