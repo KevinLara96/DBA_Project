@@ -204,3 +204,48 @@ begin
 end;
 / 
 show errors 
+
+
+-- secuencia para llave primara de la tabla calificacion
+create sequence seq_calificacion
+    start with 1
+    increment by 1
+    nomaxvalue
+    nominvalue
+    order
+;
+
+-- trigger para agregar clificaciones de servicio
+-- Tabla: CALIFICACION
+create or replace trigger tr_calificacion
+	after update of status_servicio_id
+	on servicio
+	for each row
+declare
+v_calificacion_id  calificacion.calificacion_id%TYPE;
+v_estrellas        calificacion.estrellas%TYPE;
+v_cometario       calificacion.cometario%TYPE;
+v_cliente_id       calificacion.cliente_id%TYPE;
+v_servicio_id      calificacion.servicio_id%TYPE;
+
+v_status_servicio_id  servicio.status_servicio_id%TYPE;
+
+begin
+	v_status_servicio_id := :new.status_servicio_id;
+
+	if (v_status_servicio_id = 5) then
+	
+		select seq_calificacion.nextval into v_calificacion_id from dual;
+		v_estrellas := round(dbms_random.value(0,5));
+		select dbms_random.string('L', 150) into v_cometario from dual;
+		v_cliente_id := :new.cliente_id;
+		v_servicio_id := :new.servicio_id;
+
+		insert into calificacion (calificacion_id,estrellas,cometario,cliente_id,servicio_id)
+		values (v_calificacion_id,v_estrellas,v_cometario,v_cliente_id,v_servicio_id);
+
+	end if;
+
+end;
+/ 
+show errors 

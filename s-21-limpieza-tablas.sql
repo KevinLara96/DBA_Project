@@ -23,6 +23,7 @@ drop sequence seq_tarjeta;
 drop sequence seq_servicio;
 drop sequence seq_cobro_servicio;
 drop sequence seq_deposito;
+drop sequence seq_calificacion;
 
 -- provedor
 connect provedor/provedor
