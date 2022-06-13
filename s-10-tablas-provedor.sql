@@ -312,3 +312,8 @@ CREATE TABLE SERVICIO_REALIZADO_IMAGEN(
 
 grant references on provedor to cliente;
 grant references on tipo_servicio to cliente;
+grant select on provedor to cliente;
+grant insert on provedor to cliente;
+grant update on provedor to cliente;
+grant select on provedor_servicio to cliente;
+grant select on tipo_servicio to cliente;
