@@ -12,6 +12,17 @@ insert into PROVEDOR (PROVEDOR_ID, NOMBRE, APELLIDO, FECHA_NACIMIENTO, LUGAR_NAC
 insert into PROVEDOR (PROVEDOR_ID, NOMBRE, APELLIDO, FECHA_NACIMIENTO, LUGAR_NACIMIENTO, DIRECCION, STATUS_PROVEDOR_ID, NIVEL_ESTUDIO_ID, BANCO_ID) values (3, 'Rog', 'Trenaman', '04/11/1973', 'China', '43 Evergreen Hill', 5, 2, 2);
 insert into PROVEDOR (PROVEDOR_ID, NOMBRE, APELLIDO, FECHA_NACIMIENTO, LUGAR_NACIMIENTO, DIRECCION, STATUS_PROVEDOR_ID, NIVEL_ESTUDIO_ID, BANCO_ID) values (4, 'Damian', 'Ponte', '05/08/1995', 'Bahamas', '07 Knutson Court', 5, 3, 3);
 
+insert into PROVEDOR_EMAIL (provedor_email_id, email, provedor_id) values (1, 'nbeernaert0@amazon.co.uk', 1);
+insert into PROVEDOR_EMAIL (provedor_email_id, email, provedor_id) values (2, 'mstanbro1@amazon.de', 2);
+insert into PROVEDOR_EMAIL (provedor_email_id, email, provedor_id) values (3, 'tfisher2@quantcast.com', 3);
+insert into PROVEDOR_EMAIL (provedor_email_id, email, provedor_id) values (4, 'olegrand3@wix.com', 4);
+
+
+insert into PROVEDOR_TELEFONO (provedor_telefono_id, telefono, provedor_id, telefono_tipo_id) values (1, '9585092147', 1, 2);
+insert into PROVEDOR_TELEFONO (provedor_telefono_id, telefono, provedor_id, telefono_tipo_id) values (2, '7538439943', 2, 1);
+insert into PROVEDOR_TELEFONO (provedor_telefono_id, telefono, provedor_id, telefono_tipo_id) values (3, '0759109794', 3, 2);
+insert into PROVEDOR_TELEFONO (provedor_telefono_id, telefono, provedor_id, telefono_tipo_id) values (4, '5767536035', 4, 1);
+
 commit;
 
 

@@ -53,3 +53,10 @@ grant create session, create table, create sequence, create trigger, create proc
 -- Desbloqueo del usuario SYSBACKUP
 
 alter user sysbackup account unlock;
+
+
+-- Creacion de directorio donde estan las foto y dcumentos
+
+create or replace directory dir_fotos_docs as '/unam-bda/pf-docs-fotos';
+grant read,write on directory dir_fotos_docs to provedor;
+grant read,write on directory dir_fotos_docs to cliente;
