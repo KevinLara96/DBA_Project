@@ -14,4 +14,3 @@ whenever sqlerror exit rollback;
 @@s-13-insert-catalogos-cliente.sql
 @@s-15-tr-modulo-cliente.sql
 @@s-18-carga-datos-cliente.sql
-@@s-19-carga-servicios-cliente.sql
