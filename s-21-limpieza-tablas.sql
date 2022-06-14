@@ -20,7 +20,6 @@ drop table STATUS_SERVICIO;
 
 drop sequence seq_historico_status_servicio;
 drop sequence seq_tarjeta;
-drop sequence seq_servicio;
 drop sequence seq_cobro_servicio;
 drop sequence seq_deposito;
 drop sequence seq_calificacion;

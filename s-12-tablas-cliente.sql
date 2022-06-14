@@ -12,7 +12,7 @@ connect cliente/cliente
 CREATE TABLE CLIENTE(
     CLIENTE_ID        NUMBER(5, 0)    NOT NULL,
     USUARIO           VARCHAR2(20)    NOT NULL,
-    PASSWORD          VARCHAR2(15)    NOT NULL,
+    PASSWORD          VARCHAR2(40)    NOT NULL,
     EMAIL             VARCHAR2(40)    NOT NULL,
     TELEFONO          VARCHAR2(10)    NOT NULL,
     DIRECCION         VARCHAR2(70)    NOT NULL,
